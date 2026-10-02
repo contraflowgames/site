@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="512" height="512" role="img" aria-label="Contraflow Games lane mark, one color" color="#0B1620">
+  <title>Contraflow Games – lane mark (one color)</title>
+  <defs>
+    <mask id="cf-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120">
+      <rect x="0" y="0" width="120" height="120" fill="#fff"/>
+      <line x1="60" y1="26" x2="60" y2="94" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+      <g fill="none" stroke="#000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18,50 33,35 48,50"/>
+        <polyline points="18,82 33,67 48,82"/>
+        <polyline points="72,35 87,50 102,35"/>
+        <polyline points="72,67 87,82 102,67"/>
+      </g>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="120" height="120" rx="26" fill="currentColor" mask="url(#cf-cut)"/>
+</svg>

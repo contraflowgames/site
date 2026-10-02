@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="512" height="512" role="img" aria-label="Contraflow Games lane mark">
+  <title>Contraflow Games – lane mark (full)</title>
+  <rect x="0" y="0" width="120" height="120" rx="26" fill="#F5A800"/>
+  <line x1="60" y1="16" x2="60" y2="104" stroke="#10263A" stroke-width="4" stroke-dasharray="8 8"/>
+  <g fill="none" stroke="#10263A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="26,42 38,30 50,42"/>
+    <polyline points="26,66 38,54 50,66"/>
+    <polyline points="26,90 38,78 50,90"/>
+    <polyline points="70,30 82,42 94,30"/>
+    <polyline points="70,54 82,66 94,54"/>
+    <polyline points="70,78 82,90 94,78"/>
+  </g>
+</svg>

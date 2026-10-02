@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contraflow Games – social image source</title>
+<meta name="robots" content="noindex">
+<!-- The source of og-image.png (1200×630), drawn from the brand, not artwork.
+     Re-render it after a change: see README "Social image". -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;800&display=swap">
+<link rel="stylesheet" href="/brand/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  body { width: 1200px; height: 630px; overflow: hidden; margin: 0; }
+  .og { height: 630px; display: grid; grid-template-rows: 1fr auto; }
+  .og .top { display: flex; align-items: center; gap: 48px; padding: 0 80px; }
+  .og .top img { width: 200px; height: 200px; }
+  .og .wordmark .name { font-size: 104px; }
+  .og .wordmark .kind { font-size: 35px; }
+  .og .line { font: 700 44px/1.1 var(--font-display); color: var(--text); margin: 24px 0 0; }
+  .og .road { margin: 0; }
+</style>
+</head>
+<body>
+<div class="og">
+  <div class="top">
+    <img src="/logo/contraflow-lane-mark-full.svg" alt="" width="200" height="200">
+    <div>
+      <p class="wordmark" style="margin:0"><span class="name">Contraflow</span><span class="kind">Games</span></p>
+      <p class="line">The Wrong Way Forward</p>
+    </div>
+  </div>
+  <div class="road" aria-hidden="true">
+    <div class="lane east"></div>
+    <div class="centre-line"></div>
+    <div class="lane west"></div>
+  </div>
+</div>
+</body>
+</html>

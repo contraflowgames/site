@@ -1,0 +1,60 @@
+/*
+  Contraflow Games – design tokens (v1, concept stage)
+  Load fonts in <head>:
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@300;600;700;800&display=swap" rel="stylesheet">
+*/
+
+:root {
+  /* Core palette */
+  --cf-navy: #10263A;       /* default page background (dark theme) */
+  --cf-ink: #0B1620;        /* one-color logo, deepest text */
+  --cf-paper: #F3EFE6;      /* primary text on navy; light theme background */
+  --cf-sand: #E7E1D3;       /* secondary surface on light theme */
+  --cf-amber: #F5A800;      /* accent: primary action + logo badge. Never used as text on paper. */
+  --cf-slate: #4A5A68;      /* secondary text on paper */
+  --cf-mist: #C9D2DA;       /* secondary text on navy */
+  --cf-line: #2A445B;       /* hairlines and borders on navy */
+
+  /* Semantic roles (dark theme = default) */
+  --bg: var(--cf-navy);
+  --surface: #163149;       /* slightly lifted panel on navy; adjust if needed */
+  --text: var(--cf-paper);
+  --text-muted: var(--cf-mist);
+  --accent: var(--cf-amber);
+  --on-accent: var(--cf-navy);
+  --border: var(--cf-line);
+
+  /* Type */
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Type scale (fluid, adjust as needed) */
+  --step--1: clamp(0.875rem, 0.85rem + 0.1vw, 0.95rem);
+  --step-0: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-1: clamp(1.375rem, 1.25rem + 0.5vw, 1.625rem);
+  --step-2: clamp(1.875rem, 1.6rem + 1.1vw, 2.5rem);
+  --step-3: clamp(2.5rem, 2rem + 2.2vw, 3.75rem);
+  --step-4: clamp(3.25rem, 2.4rem + 4vw, 6rem);
+
+  /* Space and shape */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+  --radius-badge: 22%;      /* matches the logo badge corner ratio (26/120) */
+  --measure: 68ch;          /* max line length for body text */
+}
+
+/* Optional light theme */
+:root[data-theme="light"] {
+  --bg: var(--cf-paper);
+  --surface: var(--cf-sand);
+  --text: var(--cf-navy);
+  --text-muted: var(--cf-slate);
+  --border: #CFC8B6;
+  /* Amber fails contrast as text on paper: keep it for badges and buttons with navy text. */
+}
