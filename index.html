@@ -10,22 +10,21 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#10263A">
-<!-- Open Graph and Twitter. The image URL must be absolute once the site has a domain: [SITE URL]. -->
+<link rel="canonical" href="https://contraflow.games/">
+<!-- Open Graph and Twitter, absolute to the live site. -->
+<meta property="og:url" content="https://contraflow.games/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Contraflow Games">
 <meta property="og:title" content="Contraflow Games – city-building and simulation games">
 <meta property="og:description" content="Contraflow Games makes city-building and simulation games for Mac.">
-<meta property="og:image" content="/og-image.png">
+<meta property="og:image" content="https://contraflow.games/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Contraflow Games lane mark and wordmark over a two-lane road">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contraflow Games – city-building and simulation games">
 <meta name="twitter:description" content="Contraflow Games makes city-building and simulation games for Mac.">
-<meta name="twitter:image" content="/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@300;600;700;800&display=swap">
+<meta name="twitter:image" content="https://contraflow.games/og-image.png">
 <link rel="stylesheet" href="/brand/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -63,6 +62,7 @@
   <section class="section" id="games" aria-labelledby="games-title">
     <div class="wrap">
       <h2 id="games-title">Games</h2>
+      <!-- NAME-DEPENDENT: "NeCity" is a working title, not yet trademark-cleared. Nothing with the name is published until the check clears. -->
       <article class="featured necity" aria-labelledby="necity">
       <div class="game-head">
         <div>
@@ -71,18 +71,21 @@
           <p class="game-line">NeCity, pronounced &ldquo;Neon City&rdquo;, is a city builder with a neon retrowave look.</p>
         </div>
       </div>
-      <figure class="lead">
-        <!-- LOCAL PLACEHOLDER: the trailer file is not committed (see .gitignore) and must be
-             hosted before deploy; replace src with the hosted URL. Never autoplay. -->
-        <video controls preload="none" playsinline poster="/assets/img/necity-trailer-poster-1600.jpg" width="1600" height="900">
-          <source src="/assets/video/necity-trailer-v2-1080p.mp4" type="video/mp4">
-        </video>
-        <figcaption>Trailer, 1:24, captured in the game.</figcaption>
+      <figure class="lead trailer">
+        <!-- The NeCity trailer, on YouTube. Nothing from Google loads until the button is
+             pressed: /assets/trailer.js then swaps in a youtube-nocookie embed. The video ID
+             lives only in the "Watch on YouTube" link below (the script reads it from there),
+             which is also the way to the trailer without JavaScript. Never autoplay on load. -->
+        <div class="trailer-frame">
+          <img src="/assets/img/necity-trailer-poster-1600.jpg" width="1600" height="900" alt="">
+          <button type="button" class="trailer-play" aria-label="Play the NeCity trailer" hidden></button>
+        </div>
+        <figcaption>Trailer, 0:59, captured in the game. Plays from YouTube. <a class="trailer-link" href="https://youtu.be/v_oTbb7BtGI">Watch on YouTube</a></figcaption>
       </figure>
       <ul class="shots">
-        <li><figure><img src="/assets/img/necity-2-street-rain-480.jpg" srcset="/assets/img/necity-2-street-rain-480.jpg 480w, /assets/img/necity-2-street-rain-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity: a street in the rain, lit signs reflected in the wet road" loading="lazy" decoding="async"></figure></li>
-        <li><figure><img src="/assets/img/necity-3-downtown-dry-480.jpg" srcset="/assets/img/necity-3-downtown-dry-480.jpg 480w, /assets/img/necity-3-downtown-dry-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity: downtown towers at dusk, seen from above" loading="lazy" decoding="async"></figure></li>
-        <li><figure><img src="/assets/img/necity-water-view-480.jpg" srcset="/assets/img/necity-water-view-480.jpg 480w, /assets/img/necity-water-view-800.jpg 800w" sizes="(max-width: 760px) 100vw, 24rem" width="800" height="450" alt="NeCity: the water view with the game's panels, the network back on after a new water tower" loading="lazy" decoding="async"></figure></li>
+        <li><figure><img src="/assets/img/necity-attractions-480.jpg" srcset="/assets/img/necity-attractions-480.jpg 480w, /assets/img/necity-attractions-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity: the attractions district, a laser show over the drive-in, the rink and the bowling alley" loading="lazy" decoding="async"></figure></li>
+        <li><figure><img src="/assets/img/necity-towers-480.jpg" srcset="/assets/img/necity-towers-480.jpg 480w, /assets/img/necity-towers-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity: the skyline up close, towers of many shapes lit in neon" loading="lazy" decoding="async"></figure></li>
+        <li><figure><img src="/assets/img/necity-neon-nights-rain-480.jpg" srcset="/assets/img/necity-neon-nights-rain-480.jpg 480w, /assets/img/necity-neon-nights-rain-800.jpg 800w" sizes="(max-width: 760px) 100vw, 24rem" width="800" height="450" alt="NeCity: searchlights over the wet streets on a Neon Nights evening" loading="lazy" decoding="async"></figure></li>
       </ul>
     </article>
     <div class="previews">
@@ -99,10 +102,11 @@
           <div>
             <h3 class="game-name" id="alpha"><img class="game-wordmark sign" src="/assets/img/brand/alphapp-lockup.png" alt="Alpha++ · City builder" width="2356" height="520"></h3>
             <ul class="plates"><li class="plate">In development</li><li class="plate">Spring 2027</li></ul>
-            <p class="game-line">A modern city builder.</p>
+            <p class="game-line">A modern city builder, with a clean, model-like realism.</p>
           </div>
         </div>
       </article>
+      <!-- NAME-DEPENDENT: "NeCity Classic" carries the NeCity working title; held until the trademark check. -->
       <article class="preview" aria-labelledby="classic">
         <figure>
           <img src="/assets/img/classic-concept-downtown-960.jpg" srcset="/assets/img/classic-concept-downtown-960.jpg 960w, /assets/img/classic-concept-downtown-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 38rem" width="1600" height="900" alt="NeCity Classic concept mockup: simple neon-edged blocks of a downtown, seen at an angle" loading="lazy" decoding="async">
@@ -112,8 +116,23 @@
         <div class="game-head">
           <div>
             <h3 class="game-name" id="classic"><img class="game-wordmark classic" src="/assets/img/brand/necity-classic-lockup.png" alt="NeCity Classic" width="768" height="462"></h3>
-            <ul class="plates"><li class="plate">Concept</li><li class="plate">Winter 2026</li></ul>
-            <p class="game-line">A classic-style city builder you can learn in ten minutes, on a small map.</p>
+            <ul class="plates"><li class="plate">Concept</li><li class="plate">Mac · Winter 2026</li><li class="plate">Then iPad</li></ul>
+            <p class="game-line">A classic-style city builder you can learn in ten minutes, on a small map. One purchase covers Mac and iPad.</p>
+          </div>
+        </div>
+      </article>
+      <!-- PENDING: the concept renders show invented ship lines ("Corvane", "Kestrel") on the hulls, awaiting the owner's name check. -->
+      <article class="preview quayside" aria-labelledby="quayside">
+        <figure>
+          <img src="/assets/img/quayside-concept-overview-960.jpg" srcset="/assets/img/quayside-concept-overview-960.jpg 960w, /assets/img/quayside-concept-overview-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 38rem" width="1600" height="900" alt="Unnamed Port Terminal Sim concept render: a container terminal at golden hour, cranes working a moored ship, the yard of stacked boxes behind" loading="lazy" decoding="async">
+          <span class="stamp">Concept</span>
+          <div class="second"><img src="/assets/img/quayside-concept-quay-480.jpg" srcset="/assets/img/quayside-concept-quay-480.jpg 480w, /assets/img/quayside-concept-quay-800.jpg 800w" sizes="(max-width: 760px) 100vw, 38rem" width="800" height="450" alt="Unnamed Port Terminal Sim concept render: ship-to-shore cranes lifting boxes off a container ship" loading="lazy" decoding="async"></div>
+        </figure>
+        <div class="game-head">
+          <div>
+            <h3 class="game-name text-mark" id="quayside">Unnamed Port Terminal Sim</h3>
+            <ul class="plates"><li class="plate">Concept</li><li class="plate">Coming Summer 2027</li></ul>
+            <p class="game-line">Run a container terminal: ships, cranes, the yard, and every box&rsquo;s way out by truck or train.</p>
           </div>
         </div>
       </article>
@@ -139,7 +158,7 @@
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <p>© <span class="ph">[YEAR]</span> <span class="ph">[LEGAL ENTITY NAME]</span></p>
+    <p>© 2026 Contraflow Games LLC</p>
     <ul>
       <li><a href="/games/">Games</a></li>
       <li><a href="/about/">About</a></li>
@@ -147,5 +166,6 @@
     </ul>
   </div>
 </footer>
+<script src="/assets/trailer.js" defer></script>
 </body>
 </html>
