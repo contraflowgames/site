@@ -168,6 +168,8 @@ main { display: block; }
   .game.featured { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; }
   .game.featured .gallery { display: contents; }
   .game.featured .shots { grid-column: 1 / -1; }
+  /* Lo-Fi's seven store shots, four to a row. */
+  .shots.wide-first { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 /* The name: one box height for every game, so no name shouts over another.
@@ -222,11 +224,12 @@ main { display: block; }
 
 .gallery { display: grid; gap: var(--space-2); margin: 0; }
 .gallery figure, .shots figure, .card figure { margin: 0; }
-.gallery figcaption, .shots figcaption { font-size: var(--step--1); color: var(--text-muted); margin-top: 0.4rem; }
-.gallery img, .shots img, .card figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--border); }
+.gallery figcaption, .shots figcaption, .pair figcaption { font-size: var(--step--1); color: var(--text-muted); margin-top: 0.4rem; }
+.gallery img, .shots img, .pair img, .card figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--border); }
 .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
-.gallery.pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.gallery.pair figcaption { grid-column: 1 / -1; margin-top: 0; }
+.pair { display: grid; gap: var(--space-2); margin: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pair figcaption { grid-column: 1 / -1; margin-top: 0; }
+.gallery-note { font-size: var(--step--1); color: var(--text-muted); margin: 0; }
 .pic, .shots figure, .card figure { position: relative; }
 
 /* The honest label, on the picture itself: "In game" for gameplay captures,
@@ -284,7 +287,14 @@ main { display: block; }
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4) var(--space-3); }
 .card { display: flex; flex-direction: column; }
 .card figure { margin-bottom: var(--space-2); }
-.card .more { margin-top: auto; font-weight: 500; }
+/* A card's logo or name is its link to the game's section on the games page:
+   an arrow says so at rest, and it turns amber with an underline on hover and focus. */
+.name-link { display: inline-flex; align-items: center; gap: 0.6rem; height: 100%; max-width: 100%; color: var(--text); text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 2px; }
+.name-link::after { content: "\2192" / ""; font: 600 var(--step-1)/1 var(--font-body); color: var(--text-muted); flex: none; }
+.name-link:hover, .name-link:focus-visible { border-bottom-color: var(--accent); }
+.name-link:hover::after, .name-link:focus-visible::after { color: var(--accent); }
+.name-link img.game-wordmark { height: 100%; min-width: 0; }
+.name-link img.game-wordmark.sign { height: 78%; }
 @media (min-width: 761px) {
   /* Beside each other, the cards line up picture-first; on a phone the name leads. */
   .card figure { order: -1; }
@@ -293,7 +303,10 @@ main { display: block; }
 @media (max-width: 760px) {
   :root { --name-h: 3.5rem; }
   .game.featured { padding: var(--space-2); }
-  .gallery.pair { grid-template-columns: 1fr; }
+  .pair { grid-template-columns: 1fr; }
+  /* On a phone, the whole-city view leads full width and the other six pair up. */
+  .shots.wide-first li:last-child:nth-child(odd) { grid-column: auto; }
+  .shots.wide-first li:first-child { grid-column: 1 / -1; }
   .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shots li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   /* The home page's three screenshots: a sideways swipe row. */
