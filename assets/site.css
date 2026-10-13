@@ -47,6 +47,8 @@ a:hover { text-decoration-thickness: 2px; }
   padding: var(--space-1) var(--space-2); font-weight: 600; z-index: 10;
 }
 .skip:focus { top: var(--space-2); }
+/* Read by screen readers and search engines, not drawn: the home page's h1. */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 .wrap { width: 100%; max-width: 72rem; margin-inline: auto; padding-inline: var(--space-3); }
 
@@ -88,9 +90,9 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 /* Two lanes, opposing chevrons, a dashed centre line: the logo's road
-   turned on its side and run the width of the page. */
+   turned on its side and run the width of the page. On the home page it
+   divides the first game from the rest. */
 .road {
-  margin-top: var(--space-5);
   background: var(--cf-ink);
   border-block: 1px solid var(--border);
   padding-block: 0.9rem;
@@ -147,74 +149,101 @@ main { display: block; }
 .muted { color: var(--text-muted); }
 
 /* ---- Games ------------------------------------------------------------ */
+/* One layout for every game, on the home page and the games page: the head
+   (name, labels, one line) comes first in the page, so on a phone the name
+   is read before the pictures; from 761 px the pictures sit beside it. */
 
-.featured { display: grid; gap: var(--space-3); }
-.featured .lead { margin: 0; }
-.featured .lead img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--border); }
-.game-name { font: 800 var(--step-3)/1 var(--font-display); margin: 0 0 var(--space-1); }
+:root {
+  --name-h: 4.5rem;          /* every game name sits in a box this tall */
+  --necity-night: #140C2E;   /* the featured game's panel (see below) */
+}
+
+.game { display: grid; gap: var(--space-3) var(--space-4); align-items: start; }
+.game + .game { margin-top: var(--space-5); padding-top: var(--space-5); border-top: 2px dashed var(--border); }
+.game-head > :last-child { margin-bottom: 0; }
 .game-line { margin: 0 0 var(--space-2); color: var(--text-muted); max-width: var(--measure); }
 
-/* A status is a sign plate: square, bordered, condensed type. */
-.plates { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: 0 0 var(--space-2); padding: 0; list-style: none; }
+@media (min-width: 761px) {
+  .game { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+  .game.featured { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; }
+  .game.featured .gallery { display: contents; }
+  .game.featured .shots { grid-column: 1 / -1; }
+}
+
+/* The name: one box height for every game, so no name shouts over another.
+   A game's logo is its own artwork and keeps its own colours. */
+.game .game-name, .card .game-name {
+  display: flex; align-items: center;
+  height: var(--name-h); margin: 0 0 var(--space-2);
+  line-height: 1;
+}
+.game-name img.game-wordmark { height: 100%; width: auto; max-width: 100%; object-fit: contain; object-position: left center; }
+/* Alpha++'s lockup is a solid sign, heavier than the neon wordmarks at the same height. */
+.game-name img.game-wordmark.sign { height: 78%; }
+/* A game without a wordmark yet: its name in the display face, mixed case, sized to sit with the logos. */
+.game .game-name.text-mark, .card .game-name.text-mark {
+  height: auto; min-height: var(--name-h);
+  font: 700 clamp(1.6rem, 1.3rem + 0.6vw, 2rem)/1.05 var(--font-display);
+  letter-spacing: 0.01em;
+}
+/* The featured game's name is the one larger name on a page. */
+.game .game-name.lead-name { height: calc(var(--name-h) * 1.9); }
+
+/* Labels: three kinds, three looks. A status is a filled chip in capitals,
+   a date is the square sign plate, a platform is plain text. */
+.labels { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) 0.75rem; margin: 0 0 var(--space-2); padding: 0; list-style: none; }
+.status {
+  font: 700 var(--step--1)/1 var(--font-display);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.65rem 0.45rem;
+}
+.status.first { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 .plate {
   font: 600 var(--step-0)/1 var(--font-display);
   letter-spacing: 0.02em;
   border: 2px solid var(--text);
   padding: 0.35rem 0.6rem 0.3rem;
 }
+.platform { font: 500 var(--step--1)/1 var(--font-body); color: var(--text-muted); }
 
-.shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); margin: var(--space-3) 0 0; padding: 0; list-style: none; }
-.shots figure { margin: 0; }
-.shots img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--border); }
-.shots figcaption, .lead figcaption, .preview figcaption { font-size: var(--step--1); color: var(--text-muted); margin-top: 0.4rem; }
-
-.previews h3 { font: 700 var(--step-2)/1.1 var(--font-display); margin: 0 0 var(--space-1); }
-.preview {
-  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: var(--space-4); align-items: start;
-  padding-block: var(--space-4);
+/* The store buttons: placeholders until the store pages exist. Dashed like
+   roadworks and not links, so nobody mistakes them for broken buttons. */
+.stores { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: var(--space-3) 0 0; padding: 0; list-style: none; }
+.store {
+  font: 700 var(--step-0)/1.2 var(--font-display); letter-spacing: 0.02em;
+  border: 2px dashed var(--text-muted); border-radius: 4px;
+  padding: 0.8rem 1rem;
 }
-/* Dashed dividers between previews: lane markings, not boxes. */
-.preview + .preview { border-top: 2px dashed var(--border); }
-.preview figure { margin: 0; position: relative; }
-.preview img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--border); }
-.preview .second { margin-top: var(--space-2); }
-/* The honest label, on the picture itself. */
+.store-when { display: block; margin-top: 0.3rem; font: 500 var(--step--1)/1 var(--font-body); letter-spacing: 0; color: var(--text-muted); }
+
+/* ---- Pictures ---------------------------------------------------------- */
+
+.gallery { display: grid; gap: var(--space-2); margin: 0; }
+.gallery figure, .shots figure, .card figure { margin: 0; }
+.gallery figcaption, .shots figcaption { font-size: var(--step--1); color: var(--text-muted); margin-top: 0.4rem; }
+.gallery img, .shots img, .card figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--border); }
+.shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.gallery.pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gallery.pair figcaption { grid-column: 1 / -1; margin-top: 0; }
+.pic, .shots figure, .card figure { position: relative; }
+
+/* The honest label, on the picture itself: "In game" for gameplay captures,
+   "Render" for staged or offline frames. */
 .stamp {
-  position: absolute; left: 0.6rem; top: 0.6rem;
+  position: absolute; left: 0.5rem; top: 0.5rem; z-index: 1;
   background: var(--bg); color: var(--text);
-  border: 2px solid var(--text);
-  font: 600 var(--step--1)/1 var(--font-display);
-  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--text-muted);
+  font: 600 var(--step--1)/1 var(--font-display); letter-spacing: 0.03em;
+  padding: 0.3rem 0.45rem;
+  pointer-events: none;
 }
 
-/* ---- Each game's own brand -------------------------------------------- */
-/* A game's logo is its own artwork and keeps its own colours; the studio
-   palette frames it. NeCity's panel is its night sky, the one place the
-   site steps outside the studio palette, and only behind NeCity. */
-:root { --necity-night: #140C2E; }
-
-.game-head { display: flex; gap: var(--space-3); align-items: flex-start; }
-.game-head > div { min-width: 0; }
-/* Logos are not screenshots: undo the picture rules inside a game's head. */
-.preview .game-head img, .featured .game-head img { aspect-ratio: auto; border: 0; object-fit: contain; }
-.preview .game-head .game-icon { width: 96px; }
-.game-icon { width: 96px; height: 96px; flex: none; border-radius: var(--radius-badge); }
-.game-name img.game-wordmark { width: auto; height: 5.5rem; max-width: 100%; object-fit: contain; }
-.game-name img.game-wordmark.sign { height: 4rem; }
-.game-name img.game-wordmark.classic { height: 5rem; }
-/* The wordmark is the heading's content; it carries the name as alt text. */
-.game-name { line-height: 0; }
-/* A game without a wordmark yet (Unnamed Port Terminal Sim, the port game): its name, set in the display face. */
-.game-name.text-mark { line-height: 1; font: 800 var(--step-3)/1 var(--font-display); letter-spacing: 0.01em;
-  text-transform: uppercase; margin-bottom: var(--space-2); }
-
-.featured.necity { background: var(--necity-night); padding: var(--space-4); border: 1px solid var(--border); }
-.featured.necity .game-line { color: var(--cf-mist); }
 /* The trailer: a poster and a play button until pressed (assets/trailer.js),
    then the YouTube player in the same 16:9 box. */
 .trailer-frame { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--border); }
-.featured .lead .trailer-frame img { display: block; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.trailer-frame img { display: block; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; border: 0; }
 .trailer-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 .trailer-play {
   position: absolute; inset: 50% auto auto 50%; translate: -50% -50%;
@@ -232,18 +261,47 @@ main { display: block; }
 .trailer-link { color: var(--text); white-space: nowrap; }
 
 /* Alpha++: the exit-tab sign stands in front of its city, like a real sign. */
-.preview.alphapp .pic { position: relative; overflow: hidden; }
-.preview.alphapp .road-sign {
+.pic { overflow: hidden; }
+.gallery .pic img.road-sign {
   position: absolute; right: 4%; bottom: 6%; width: 44%; height: auto;
   aspect-ratio: auto; border: 0; object-fit: contain;
   filter: drop-shadow(0 0.4rem 0.8rem rgb(0 0 0 / 0.45));
 }
 
+/* ---- The featured game ------------------------------------------------- */
+/* NeCity Lo-Fi, the first game out. Its panel is the neon night sky, the one
+   place the site steps outside the studio palette, and only behind the
+   featured game. The other neon game, NeCity, sits on the studio navy, so the
+   two families' logos never share a panel. */
+
+.lead-game { padding-block: var(--space-4) var(--space-5); }
+.game.featured { background: var(--necity-night); padding: var(--space-4); border: 1px solid var(--border); }
+.game.featured + .game { border-top: 0; }
+.game.featured .game-line { color: var(--cf-mist); font-size: var(--step-1); line-height: 1.4; max-width: 32ch; }
+
+/* ---- Home: "Also on the way" -------------------------------------------- */
+
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4) var(--space-3); }
+.card { display: flex; flex-direction: column; }
+.card figure { margin-bottom: var(--space-2); }
+.card .more { margin-top: auto; font-weight: 500; }
+@media (min-width: 761px) {
+  /* Beside each other, the cards line up picture-first; on a phone the name leads. */
+  .card figure { order: -1; }
+}
+
 @media (max-width: 760px) {
-  .game-icon, .preview .game-head .game-icon { width: 64px; height: 64px; }
-  .game-name img.game-wordmark { height: 3.75rem; }
-  .game-name img.game-wordmark.sign { height: 2.75rem; }
-  .featured.necity { padding: var(--space-2); }
+  :root { --name-h: 3.5rem; }
+  .game.featured { padding: var(--space-2); }
+  .gallery.pair { grid-template-columns: 1fr; }
+  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shots li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* The home page's three screenshots: a sideways swipe row. */
+  .lead-game .shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-1); }
+  .lead-game .shots li { flex: 0 0 80%; scroll-snap-align: start; }
+  .lead-game { padding-block: var(--space-2) var(--space-4); }
+  .cards { grid-template-columns: 1fr; }
+  .card + .card { border-top: 2px dashed var(--border); padding-top: var(--space-4); }
 }
 
 /* ---- Placeholders: roadworks, visibly unfinished ------------------------ */
@@ -279,10 +337,9 @@ main { display: block; }
 /* ---- Narrow ------------------------------------------------------------- */
 
 @media (max-width: 760px) {
-  .preview, .split { grid-template-columns: 1fr; gap: var(--space-3); }
+  .split { grid-template-columns: 1fr; gap: var(--space-3); }
   .shots { gap: var(--space-1); }
   .hero { padding-block: var(--space-4) 0; }
-  .road { margin-top: var(--space-4); }
 }
 @media (max-width: 400px) {
   .wrap { padding-inline: var(--space-2); }

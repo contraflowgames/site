@@ -14,7 +14,7 @@
     button.addEventListener('click', function () {
       var player = document.createElement('iframe');
       player.src = 'https://www.youtube-nocookie.com/embed/' + match[1] + '?autoplay=1&rel=0';
-      player.title = 'NeCity trailer';
+      player.title = (button.getAttribute('aria-label') || 'Trailer').replace(/^Play the /, '');
       player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       player.allowFullscreen = true;
       // YouTube refuses to play an embed that sends no referrer.
