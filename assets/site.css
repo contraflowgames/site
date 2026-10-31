@@ -232,6 +232,17 @@ main { display: block; }
 .gallery-note { font-size: var(--step--1); color: var(--text-muted); margin: 0; }
 .pic, .shots figure, .card figure { position: relative; }
 
+/* A game with no pictures yet: a 16:9 box dashed like the store placeholders,
+   so it reads as roadworks rather than a missing image. */
+.pic-soon {
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 16 / 9; box-sizing: border-box;
+  border: 2px dashed var(--text-muted); background: var(--surface);
+  font: 700 var(--step-0)/1 var(--font-display); letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+.pair .pic-soon { grid-column: 1 / -1; }
+
 /* The honest label, on the picture itself: "In game" for gameplay captures,
    "Render" for staged or offline frames. */
 .stamp {
