@@ -47,7 +47,7 @@
 </header>
 <main id="main">
   <div class="wrap page-head"><h1>Games</h1></div>
-  <section class="section games-list" aria-label="NeCity Lo-Fi, NeCity, Alpha++, Alpha++ Ports, Alpha++ Rail Yards and Alpha++ Airports">
+  <section class="section games-list" aria-label="NeCity Lo-Fi, NeCity, Alpha++ and its family">
     <div class="wrap">
       <!-- NAME-DEPENDENT: "NeCity Lo-Fi" (renamed from NeCity Classic on 2026-10-12); the trademark check is still the owner's to-do. -->
       <article class="game featured" aria-labelledby="classic">
@@ -68,22 +68,24 @@
         </div>
         <div class="gallery">
           <figure class="lead trailer">
-            <!-- The NeCity Lo-Fi trailer, on YouTube, loaded only on press (see the NeCity trailer's note and /assets/trailer.js). -->
+            <!-- The NeCity Lo-Fi trailer, on YouTube. Nothing from Google loads until the button is
+                 pressed: /assets/trailer.js then swaps in a youtube-nocookie embed. The video ID
+                 lives only in the "Watch on YouTube" link below (the script reads it from there),
+                 which is also the way to the trailer without JavaScript. Never autoplay on load. -->
             <div class="trailer-frame">
               <img src="/assets/img/lofi-trailer-poster-1600.jpg" width="1600" height="900" alt="">
-              <span class="stamp">In game</span>
               <button type="button" class="trailer-play" aria-label="Play the NeCity Lo-Fi trailer" hidden></button>
             </div>
             <figcaption>Trailer, 0:55, captured in the game. Pressing play loads it from YouTube (<a href="/privacy/">privacy</a>). <a class="trailer-link" href="https://youtu.be/xC1ucnFZtsM">Watch on YouTube</a></figcaption>
           </figure>
           <ul class="shots wide-first">
-            <li><figure><a class="zoom" href="/assets/img/lofi-whole-city-2560.jpg"><img src="/assets/img/lofi-whole-city-480.jpg" srcset="/assets/img/lofi-whole-city-480.jpg 480w, /assets/img/lofi-whole-city-800.jpg 800w, /assets/img/lofi-whole-city-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: a whole city seen from above, glowing blocks on a neon grid" loading="lazy" decoding="async"></a><span class="stamp">In game</span><figcaption>Plan a whole city from the ground up.</figcaption></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/lofi-first-street-2560.jpg"><img src="/assets/img/lofi-first-street-480.jpg" srcset="/assets/img/lofi-first-street-480.jpg 480w, /assets/img/lofi-first-street-800.jpg 800w, /assets/img/lofi-first-street-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: a first street, zoned for homes, with the first houses going up" loading="lazy" decoding="async"></a><span class="stamp">In game</span><figcaption>Lay your first street and zone it for homes.</figcaption></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/lofi-first-blocks-2560.jpg"><img src="/assets/img/lofi-first-blocks-480.jpg" srcset="/assets/img/lofi-first-blocks-480.jpg 480w, /assets/img/lofi-first-blocks-800.jpg 800w, /assets/img/lofi-first-blocks-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: homes, shops and factories along a lit street" loading="lazy" decoding="async"></a><span class="stamp">In game</span><figcaption>Homes, shops and factories grow where you zone them.</figcaption></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/lofi-neighbourhoods-2560.jpg"><img src="/assets/img/lofi-neighbourhoods-480.jpg" srcset="/assets/img/lofi-neighbourhoods-480.jpg 480w, /assets/img/lofi-neighbourhoods-800.jpg 800w, /assets/img/lofi-neighbourhoods-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: new neighbourhoods laid out at the edge of a growing town" loading="lazy" decoding="async"></a><span class="stamp">In game</span><figcaption>Lay out new neighbourhoods as your town grows.</figcaption></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/lofi-street-life-2560.jpg"><img src="/assets/img/lofi-street-life-480.jpg" srcset="/assets/img/lofi-street-life-480.jpg 480w, /assets/img/lofi-street-life-800.jpg 800w, /assets/img/lofi-street-life-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: a busy town of glowing blocks, with traffic on the streets between them" loading="lazy" decoding="async"></a><span class="stamp">In game</span><figcaption>Every street fills with lit windows and traffic.</figcaption></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/lofi-busy-city-2560.jpg"><img src="/assets/img/lofi-busy-city-480.jpg" srcset="/assets/img/lofi-busy-city-480.jpg 480w, /assets/img/lofi-busy-city-800.jpg 800w, /assets/img/lofi-busy-city-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: a whole town grown into a busy city of glowing blocks" loading="lazy" decoding="async"></a><span class="stamp">In game</span><figcaption>Watch your town become a busy city.</figcaption></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/lofi-services-2560.jpg"><img src="/assets/img/lofi-services-480.jpg" srcset="/assets/img/lofi-services-480.jpg 480w, /assets/img/lofi-services-800.jpg 800w, /assets/img/lofi-services-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: the services view, showing which blocks have water, power, police and schools" loading="lazy" decoding="async"></a><span class="stamp">In game</span><figcaption>Bring water, power, police and schools to every block.</figcaption></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/lofi-whole-city-2560.jpg"><img src="/assets/img/lofi-whole-city-480.jpg" srcset="/assets/img/lofi-whole-city-480.jpg 480w, /assets/img/lofi-whole-city-800.jpg 800w, /assets/img/lofi-whole-city-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: a whole city seen from above, glowing blocks on a neon grid" loading="lazy" decoding="async"></a><figcaption>Plan a whole city from the ground up.</figcaption></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/lofi-first-street-2560.jpg"><img src="/assets/img/lofi-first-street-480.jpg" srcset="/assets/img/lofi-first-street-480.jpg 480w, /assets/img/lofi-first-street-800.jpg 800w, /assets/img/lofi-first-street-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: a first street, zoned for homes, with the first houses going up" loading="lazy" decoding="async"></a><figcaption>Lay your first street and zone it for homes.</figcaption></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/lofi-first-blocks-2560.jpg"><img src="/assets/img/lofi-first-blocks-480.jpg" srcset="/assets/img/lofi-first-blocks-480.jpg 480w, /assets/img/lofi-first-blocks-800.jpg 800w, /assets/img/lofi-first-blocks-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: homes, shops and factories along a lit street" loading="lazy" decoding="async"></a><figcaption>Homes, shops and factories grow where you zone them.</figcaption></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/lofi-neighbourhoods-2560.jpg"><img src="/assets/img/lofi-neighbourhoods-480.jpg" srcset="/assets/img/lofi-neighbourhoods-480.jpg 480w, /assets/img/lofi-neighbourhoods-800.jpg 800w, /assets/img/lofi-neighbourhoods-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: new neighbourhoods laid out at the edge of a growing town" loading="lazy" decoding="async"></a><figcaption>Lay out new neighbourhoods as your town grows.</figcaption></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/lofi-street-life-2560.jpg"><img src="/assets/img/lofi-street-life-480.jpg" srcset="/assets/img/lofi-street-life-480.jpg 480w, /assets/img/lofi-street-life-800.jpg 800w, /assets/img/lofi-street-life-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: a busy town of glowing blocks, with traffic on the streets between them" loading="lazy" decoding="async"></a><figcaption>Every street fills with lit windows and traffic.</figcaption></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/lofi-busy-city-2560.jpg"><img src="/assets/img/lofi-busy-city-480.jpg" srcset="/assets/img/lofi-busy-city-480.jpg 480w, /assets/img/lofi-busy-city-800.jpg 800w, /assets/img/lofi-busy-city-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: a whole town grown into a busy city of glowing blocks" loading="lazy" decoding="async"></a><figcaption>Watch your town become a busy city.</figcaption></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/lofi-services-2560.jpg"><img src="/assets/img/lofi-services-480.jpg" srcset="/assets/img/lofi-services-480.jpg 480w, /assets/img/lofi-services-800.jpg 800w, /assets/img/lofi-services-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="NeCity Lo-Fi in game: the services view, showing which blocks have water, power, police and schools" loading="lazy" decoding="async"></a><figcaption>Bring water, power, police and schools to every block.</figcaption></figure></li>
           </ul>
         </div>
       </article>
@@ -94,30 +96,19 @@
           <h2 class="game-name" id="necity"><img class="game-wordmark" src="/assets/img/brand/necity-wordmark.png" alt="NeCity" width="852" height="421"></h2>
           <ul class="labels">
             <li class="status">In development</li>
-            <li class="plate">Winter 2026</li>
           </ul>
-          <p class="game-line">NeCity, pronounced &ldquo;Neon City&rdquo;, is a city builder with a neon retrowave look.</p>
+          <p class="game-line">NeCity, pronounced &ldquo;Neon City&rdquo;, is a city builder whose streets light up in neon as they come alive.</p>
         </div>
         <div class="gallery">
-          <figure class="lead trailer">
-            <!-- The NeCity trailer, on YouTube. Nothing from Google loads until the button is
-                 pressed: /assets/trailer.js then swaps in a youtube-nocookie embed. The video ID
-                 lives only in the "Watch on YouTube" link below (the script reads it from there),
-                 which is also the way to the trailer without JavaScript. Never autoplay on load. -->
-            <div class="trailer-frame">
-              <img src="/assets/img/necity-trailer-poster-1600.jpg" width="1600" height="900" alt="">
-              <span class="stamp">In game</span>
-              <button type="button" class="trailer-play" aria-label="Play the NeCity trailer" hidden></button>
-            </div>
-            <figcaption>Trailer, 1:31, early footage captured in the game. Pressing play loads it from YouTube (<a href="/privacy/">privacy</a>). <a class="trailer-link" href="https://youtu.be/dq6lI38dx4s">Watch on YouTube</a></figcaption>
+          <figure class="pair">
+            <div class="pic"><a class="zoom" href="/assets/img/necity-street-quiet-2560.jpg"><img src="/assets/img/necity-street-quiet-480.jpg" srcset="/assets/img/necity-street-quiet-480.jpg 480w, /assets/img/necity-street-quiet-800.jpg 800w, /assets/img/necity-street-quiet-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="800" height="450" alt="NeCity: a street of shops and flats on a quiet night, warm windows and unlit signs" loading="lazy" decoding="async"></a></div>
+            <div class="pic"><a class="zoom" href="/assets/img/necity-street-buzzing-2560.jpg"><img src="/assets/img/necity-street-buzzing-480.jpg" srcset="/assets/img/necity-street-buzzing-480.jpg 480w, /assets/img/necity-street-buzzing-800.jpg 800w, /assets/img/necity-street-buzzing-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="800" height="450" alt="NeCity: the same street once it is buzzing, its signs and venues lit in neon" loading="lazy" decoding="async"></a></div>
+            <figcaption>The same street on a quiet night, and once it&rsquo;s buzzing.</figcaption>
           </figure>
           <ul class="shots">
-            <li><figure><a class="zoom" href="/assets/img/necity-attractions-2560.jpg"><img src="/assets/img/necity-attractions-480.jpg" srcset="/assets/img/necity-attractions-480.jpg 480w, /assets/img/necity-attractions-800.jpg 800w, /assets/img/necity-attractions-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="NeCity in game: the arcade, the roller rink and the bowling alley lit up near downtown" loading="lazy" decoding="async"></a><span class="stamp">In game</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/necity-towers-2560.jpg"><img src="/assets/img/necity-towers-480.jpg" srcset="/assets/img/necity-towers-480.jpg 480w, /assets/img/necity-towers-800.jpg 800w, /assets/img/necity-towers-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="NeCity in game: the skyline up close, towers of many shapes lit in neon" loading="lazy" decoding="async"></a><span class="stamp">In game</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/necity-neon-nights-rain-2560.jpg"><img src="/assets/img/necity-neon-nights-rain-480.jpg" srcset="/assets/img/necity-neon-nights-rain-480.jpg 480w, /assets/img/necity-neon-nights-rain-800.jpg 800w, /assets/img/necity-neon-nights-rain-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="NeCity in game: a rainy night downtown, searchlights over the wet streets" loading="lazy" decoding="async"></a><span class="stamp">In game</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/necity-2-street-rain-2560.jpg"><img src="/assets/img/necity-2-street-rain-480.jpg" srcset="/assets/img/necity-2-street-rain-480.jpg 480w, /assets/img/necity-2-street-rain-800.jpg 800w, /assets/img/necity-2-street-rain-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="NeCity in game: a street in the rain, lit signs reflected in the wet road" loading="lazy" decoding="async"></a><span class="stamp">In game</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/necity-3-downtown-dry-2560.jpg"><img src="/assets/img/necity-3-downtown-dry-480.jpg" srcset="/assets/img/necity-3-downtown-dry-480.jpg 480w, /assets/img/necity-3-downtown-dry-800.jpg 800w, /assets/img/necity-3-downtown-dry-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="NeCity in game: downtown at night, seen from above" loading="lazy" decoding="async"></a><span class="stamp">In game</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/necity-water-view-2560.jpg"><img src="/assets/img/necity-water-view-480.jpg" srcset="/assets/img/necity-water-view-480.jpg 480w, /assets/img/necity-water-view-800.jpg 800w, /assets/img/necity-water-view-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="NeCity in game: the water view, the whole city&rsquo;s supply shown in blue" loading="lazy" decoding="async"></a><span class="stamp">In game</span></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/necity-ultra-downtown-2560.jpg"><img src="/assets/img/necity-ultra-downtown-480.jpg" srcset="/assets/img/necity-ultra-downtown-480.jpg 480w, /assets/img/necity-ultra-downtown-800.jpg 800w, /assets/img/necity-ultra-downtown-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="NeCity: downtown on a busy night, towers trimmed in neon" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/necity-ultra-rain-2560.jpg"><img src="/assets/img/necity-ultra-rain-480.jpg" srcset="/assets/img/necity-ultra-rain-480.jpg 480w, /assets/img/necity-ultra-rain-800.jpg 800w, /assets/img/necity-ultra-rain-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="NeCity: downtown in the rain, the wet streets mirroring the signs" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/necity-ultra-city-2560.jpg"><img src="/assets/img/necity-ultra-city-480.jpg" srcset="/assets/img/necity-ultra-city-480.jpg 480w, /assets/img/necity-ultra-city-800.jpg 800w, /assets/img/necity-ultra-city-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="NeCity: the whole city at night, seen from above" loading="lazy" decoding="async"></a></figure></li>
           </ul>
         </div>
       </article>
@@ -127,74 +118,90 @@
           <h2 class="game-name" id="alpha"><img class="game-wordmark sign" src="/assets/img/brand/alphapp-lockup.png" alt="Alpha++ · City builder" width="2356" height="520"></h2>
           <ul class="labels">
             <li class="status">In development</li>
-            <li class="plate">Spring 2027</li>
+            <li class="plate">Early Access 2027</li>
           </ul>
           <p class="game-line">A modern city builder, with a clean, model-like realism.</p>
+          <div class="family">
+            <h3>The Alpha++ family</h3>
+            <ul class="labels"><li class="status">In development</li></ul>
+            <dl>
+              <div><dt><a href="#airports">Alpha++ Airports</a></dt><dd>Run a whole airport, from the gates and the baggage hall to the shops, the hotels and the cargo sort by night.</dd></div>
+              <div><dt><a href="#ports">Alpha++ Ports</a></dt><dd>Run a container terminal: ships, cranes, the yard, and every box&rsquo;s way out by truck or train.</dd></div>
+              <div><dt><a href="#railyards">Alpha++ Rail Yards</a></dt><dd>Run a freight yard from the tower: sort the cars over the hump and get every train out on time.</dd></div>
+            </dl>
+          </div>
         </div>
         <div class="gallery">
           <figure class="pair">
             <div class="pic">
-              <a class="zoom" href="/assets/img/alphapp-skyline-2560.jpg"><img src="/assets/img/alphapp-skyline-480.jpg" srcset="/assets/img/alphapp-skyline-480.jpg 480w, /assets/img/alphapp-skyline-800.jpg 800w, /assets/img/alphapp-skyline-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="900" alt="Alpha++ in game: a dense downtown at 18:30, brick, stone and glass towers of many shapes in low evening sun" loading="lazy" decoding="async"></a>
+              <a class="zoom" href="/assets/img/alphapp-golden-skyline-2560.jpg"><img src="/assets/img/alphapp-golden-skyline-480.jpg" srcset="/assets/img/alphapp-golden-skyline-480.jpg 480w, /assets/img/alphapp-golden-skyline-800.jpg 800w, /assets/img/alphapp-golden-skyline-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="800" height="450" alt="Alpha++ in game: a dense downtown at 18:30, brick, stone and glass towers of many shapes in low evening sun" loading="lazy" decoding="async"></a>
               <img class="road-sign" src="/assets/img/brand/alphapp-exit-tab.png" alt="" width="1248" height="1040" loading="lazy" decoding="async">
-              <span class="stamp">In game</span>
             </div>
-            <div class="pic"><a class="zoom" href="/assets/img/alphapp-street-2560.jpg"><img src="/assets/img/alphapp-street-480.jpg" srcset="/assets/img/alphapp-street-480.jpg 480w, /assets/img/alphapp-street-800.jpg 800w, /assets/img/alphapp-street-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="900" alt="Alpha++ in game: a neighbourhood of tiled-roof houses, flats and shops at 18:30, a water tower, parked cars and farmland at the edge" loading="lazy" decoding="async"></a><span class="stamp">In game</span></div>
+            <div class="pic"><a class="zoom" href="/assets/img/alphapp-golden-street-2560.jpg"><img src="/assets/img/alphapp-golden-street-480.jpg" srcset="/assets/img/alphapp-golden-street-480.jpg 480w, /assets/img/alphapp-golden-street-800.jpg 800w, /assets/img/alphapp-golden-street-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="800" height="450" alt="Alpha++ in game: a neighbourhood of tiled-roof houses, flats and shops at 18:30, a water tower, parked cars and farmland at the edge" loading="lazy" decoding="async"></a></div>
           </figure>
           <ul class="shots">
-            <li><figure><a class="zoom" href="/assets/img/alphapp-river-2560.jpg"><img src="/assets/img/alphapp-river-480.jpg" srcset="/assets/img/alphapp-river-480.jpg 480w, /assets/img/alphapp-river-800.jpg 800w, /assets/img/alphapp-river-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="1600" height="900" alt="Alpha++ in game: a canal through the city at 18:30, bridges, warehouses and houses along both banks" loading="lazy" decoding="async"></a><span class="stamp">In game</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/alphapp-dusk-2560.jpg"><img src="/assets/img/alphapp-dusk-480.jpg" srcset="/assets/img/alphapp-dusk-480.jpg 480w, /assets/img/alphapp-dusk-800.jpg 800w, /assets/img/alphapp-dusk-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="1600" height="900" alt="Alpha++ in game: a whole city at 18:30, towers at the centre, low blocks and farmland around it, long shadows" loading="lazy" decoding="async"></a><span class="stamp">In game</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/alphapp-residential-day-1600.jpg"><img src="/assets/img/alphapp-residential-day-480.jpg" srcset="/assets/img/alphapp-residential-day-480.jpg 480w, /assets/img/alphapp-residential-day-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++ render: a street of terraced houses and low flats by day, with trees and cars parked along both sides" loading="lazy" decoding="async"></a><span class="stamp">Render</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/alphapp-residential-dusk-1600.jpg"><img src="/assets/img/alphapp-residential-dusk-480.jpg" srcset="/assets/img/alphapp-residential-dusk-480.jpg 480w, /assets/img/alphapp-residential-dusk-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++ render: the same terraced street at dusk, long shadows across the road" loading="lazy" decoding="async"></a><span class="stamp">Render</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/alphapp-residential-night-1600.jpg"><img src="/assets/img/alphapp-residential-night-480.jpg" srcset="/assets/img/alphapp-residential-night-480.jpg 480w, /assets/img/alphapp-residential-night-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++ render: the terraced street at night, windows and street lamps lit" loading="lazy" decoding="async"></a><span class="stamp">Render</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/alphapp-downtown-dusk-1600.jpg"><img src="/assets/img/alphapp-downtown-dusk-480.jpg" srcset="/assets/img/alphapp-downtown-dusk-480.jpg 480w, /assets/img/alphapp-downtown-dusk-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++ render: flat-roofed office and apartment blocks downtown at dusk" loading="lazy" decoding="async"></a><span class="stamp">Render</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/alphapp-downtown-night-1600.jpg"><img src="/assets/img/alphapp-downtown-night-480.jpg" srcset="/assets/img/alphapp-downtown-night-480.jpg 480w, /assets/img/alphapp-downtown-night-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++ render: the same downtown blocks at night, with lit windows" loading="lazy" decoding="async"></a><span class="stamp">Render</span></figure></li>
-            <li><figure><a class="zoom" href="/assets/img/alphapp-industry-dusk-1600.jpg"><img src="/assets/img/alphapp-industry-dusk-480.jpg" srcset="/assets/img/alphapp-industry-dusk-480.jpg 480w, /assets/img/alphapp-industry-dusk-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++ render: an industrial district at dusk, a warehouse with trucks at its loading bays, a factory, rail tracks and a busy elevated road" loading="lazy" decoding="async"></a><span class="stamp">Render</span></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/alphapp-river-2560.jpg"><img src="/assets/img/alphapp-river-480.jpg" srcset="/assets/img/alphapp-river-480.jpg 480w, /assets/img/alphapp-river-800.jpg 800w, /assets/img/alphapp-river-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++ in game: a canal through the city at 18:30, bridges, warehouses and houses along both banks" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/alphapp-dusk-2560.jpg"><img src="/assets/img/alphapp-dusk-480.jpg" srcset="/assets/img/alphapp-dusk-480.jpg 480w, /assets/img/alphapp-dusk-800.jpg 800w, /assets/img/alphapp-dusk-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++ in game: a whole city at 18:30, towers at the centre, low blocks and farmland around it, long shadows" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/alphapp-residential-day-1600.jpg"><img src="/assets/img/alphapp-residential-day-480.jpg" srcset="/assets/img/alphapp-residential-day-480.jpg 480w, /assets/img/alphapp-residential-day-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++: a street of terraced houses and low flats by day, with trees and cars parked along both sides" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/alphapp-residential-dusk-1600.jpg"><img src="/assets/img/alphapp-residential-dusk-480.jpg" srcset="/assets/img/alphapp-residential-dusk-480.jpg 480w, /assets/img/alphapp-residential-dusk-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++: the same terraced street at dusk, long shadows across the road" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/alphapp-residential-night-1600.jpg"><img src="/assets/img/alphapp-residential-night-480.jpg" srcset="/assets/img/alphapp-residential-night-480.jpg 480w, /assets/img/alphapp-residential-night-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++: the terraced street at night, windows and street lamps lit" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/alphapp-downtown-dusk-1600.jpg"><img src="/assets/img/alphapp-downtown-dusk-480.jpg" srcset="/assets/img/alphapp-downtown-dusk-480.jpg 480w, /assets/img/alphapp-downtown-dusk-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++: flat-roofed office and apartment blocks downtown at dusk" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/alphapp-downtown-night-1600.jpg"><img src="/assets/img/alphapp-downtown-night-480.jpg" srcset="/assets/img/alphapp-downtown-night-480.jpg 480w, /assets/img/alphapp-downtown-night-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++: the same downtown blocks at night, with lit windows" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/alphapp-industry-dusk-1600.jpg"><img src="/assets/img/alphapp-industry-dusk-480.jpg" srcset="/assets/img/alphapp-industry-dusk-480.jpg 480w, /assets/img/alphapp-industry-dusk-800.jpg 800w" sizes="(max-width: 760px) 50vw, 24rem" width="800" height="450" alt="Alpha++: an industrial district at dusk, a warehouse with trucks at its loading bays, a factory, rail tracks and a busy elevated road" loading="lazy" decoding="async"></a></figure></li>
           </ul>
-          <p class="gallery-note">&ldquo;In game&rdquo; pictures are captures from the game itself. &ldquo;Render&rdquo; pictures are staged frames from the game&rsquo;s own renderer, with all its effects turned up.</p>
         </div>
       </article>
 
-      <!-- PENDING: the in-game renders show invented ship lines ("Kestrel", "Corvane", "Halden") on the hulls, awaiting the owner's name check. -->
-      <article class="game quayside" aria-labelledby="quayside">
-        <div class="game-head">
-          <h2 class="game-name text-mark" id="quayside">Alpha++ Ports</h2>
-          <ul class="labels">
-            <li class="status">In development</li>
-            <li class="plate">Coming Summer 2027</li>
-          </ul>
-          <p class="game-line">Run a container terminal: ships, cranes, the yard, and every box&rsquo;s way out by truck or train.</p>
-        </div>
-        <figure class="gallery pair">
-          <div class="pic"><a class="zoom" href="/assets/img/ports-quay-2560.jpg"><img src="/assets/img/ports-quay-480.jpg" srcset="/assets/img/ports-quay-480.jpg 480w, /assets/img/ports-quay-800.jpg 800w, /assets/img/ports-quay-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="1000" alt="Alpha++ Ports in game: two cranes working the container ship Halden at the quay in evening sun, the stacked yard and its yard cranes behind" loading="lazy" decoding="async"></a><span class="stamp">In game</span></div>
-          <div class="pic"><a class="zoom" href="/assets/img/ports-yard-2560.jpg"><img src="/assets/img/ports-yard-480.jpg" srcset="/assets/img/ports-yard-480.jpg 480w, /assets/img/ports-yard-800.jpg 800w, /assets/img/ports-yard-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="1000" alt="Alpha++ Ports in game: the container yard in evening sun, rows of stacked boxes, yellow yard cranes and the road to the warehouses" loading="lazy" decoding="async"></a><span class="stamp">In game</span></div>
-          <div class="pic"><a class="zoom" href="/assets/img/ports-dusk-2560.jpg"><img src="/assets/img/ports-dusk-480.jpg" srcset="/assets/img/ports-dusk-480.jpg 480w, /assets/img/ports-dusk-800.jpg 800w, /assets/img/ports-dusk-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="1000" alt="Alpha++ Ports in game: the whole terminal at dusk, two ships at the quay under their cranes, the yard and warehouses beyond" loading="lazy" decoding="async"></a><span class="stamp">In game</span></div>
-        </figure>
-      </article>
-
-      <article class="game railyards" aria-labelledby="railyards">
-        <div class="game-head">
-          <h2 class="game-name text-mark" id="railyards">Alpha++ Rail Yards</h2>
-          <ul class="labels">
-            <li class="status">In development</li>
-          </ul>
-          <p class="game-line">Run a rail yard: sort the wagons, build the trains, and send each one out on time.</p>
-        </div>
-        <figure class="gallery pair">
-          <div class="pic"><a class="zoom" href="/assets/img/railyards-wide-2560.jpg"><img src="/assets/img/railyards-wide-480.jpg" srcset="/assets/img/railyards-wide-480.jpg 480w, /assets/img/railyards-wide-800.jpg 800w, /assets/img/railyards-wide-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="1000" alt="Alpha++ Rail Yards in game: a sorting yard at midday, rows of wagons on parallel tracks, a control tower, a long shed and farmland around it" loading="lazy" decoding="async"></a><span class="stamp">In game</span></div><div class="pic"><a class="zoom" href="/assets/img/railyards-dusk-2560.jpg"><img src="/assets/img/railyards-dusk-480.jpg" srcset="/assets/img/railyards-dusk-480.jpg 480w, /assets/img/railyards-dusk-800.jpg 800w, /assets/img/railyards-dusk-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="1000" alt="Alpha++ Rail Yards in game: the same yard at 19:00, low sun across the wagons and the shed, long shadows over the fields" loading="lazy" decoding="async"></a><span class="stamp">In game</span></div>
-        </figure>
-      </article>
-
-      <article class="game airports" aria-labelledby="airports">
+      <article class="game alphapp-family" aria-labelledby="airports">
         <div class="game-head">
           <h2 class="game-name text-mark" id="airports">Alpha++ Airports</h2>
           <ul class="labels">
             <li class="status">In development</li>
           </ul>
-          <p class="game-line">Run an airport: runways, gates, and the airlines that choose to fly from it.</p>
+          <p class="game-line">Run a whole airport, from the gates and the baggage hall to the shops, the hotels and the cargo sort by night.</p>
         </div>
-        <figure class="gallery pair">
-          <div class="pic"><a class="zoom" href="/assets/img/airports-airfield-golden-2560.jpg"><img src="/assets/img/airports-airfield-golden-480.jpg" srcset="/assets/img/airports-airfield-golden-480.jpg 480w, /assets/img/airports-airfield-golden-800.jpg 800w, /assets/img/airports-airfield-golden-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="1000" alt="Alpha++ Airports in game: a terminal at golden hour with its roof cut away, gate lounges, shops and security inside, airliners at the stands and a town beyond the car park" loading="lazy" decoding="async"></a><span class="stamp">In game</span></div><div class="pic"><a class="zoom" href="/assets/img/airports-stands-golden-2560.jpg"><img src="/assets/img/airports-stands-golden-480.jpg" srcset="/assets/img/airports-stands-golden-480.jpg 480w, /assets/img/airports-stands-golden-800.jpg 800w, /assets/img/airports-stands-golden-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="1000" alt="Alpha++ Airports in game: closer on the terminal at golden hour, rows of lounge seats, cafes and shops, airliners at the jet bridges" loading="lazy" decoding="async"></a><span class="stamp">In game</span></div><div class="pic"><a class="zoom" href="/assets/img/airports-stands-dusk-2560.jpg"><img src="/assets/img/airports-stands-dusk-480.jpg" srcset="/assets/img/airports-stands-dusk-480.jpg 480w, /assets/img/airports-stands-dusk-800.jpg 800w, /assets/img/airports-stands-dusk-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="1600" height="1000" alt="Alpha++ Airports in game: the same terminal at dusk, lounges lit, airliners waiting at their stands" loading="lazy" decoding="async"></a><span class="stamp">In game</span></div>
-        </figure>
+        <div class="gallery">
+          <ul class="shots">
+            <li><figure><a class="zoom" href="/assets/img/airports-airfield-golden-2560.jpg"><img src="/assets/img/airports-airfield-golden-480.jpg" srcset="/assets/img/airports-airfield-golden-480.jpg 480w, /assets/img/airports-airfield-golden-800.jpg 800w, /assets/img/airports-airfield-golden-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="Alpha++ Airports in game: a terminal at golden hour with its roof cut away, gate lounges, shops and security inside, airliners at the stands and a town beyond the car park" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/airports-stands-golden-2560.jpg"><img src="/assets/img/airports-stands-golden-480.jpg" srcset="/assets/img/airports-stands-golden-480.jpg 480w, /assets/img/airports-stands-golden-800.jpg 800w, /assets/img/airports-stands-golden-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="Alpha++ Airports in game: closer on the terminal at golden hour, rows of lounge seats, cafes and shops, airliners at the jet bridges" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/airports-stands-dusk-2560.jpg"><img src="/assets/img/airports-stands-dusk-480.jpg" srcset="/assets/img/airports-stands-dusk-480.jpg 480w, /assets/img/airports-stands-dusk-800.jpg 800w, /assets/img/airports-stands-dusk-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="Alpha++ Airports in game: the same terminal at dusk, lounges lit, airliners waiting at their stands" loading="lazy" decoding="async"></a></figure></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="game alphapp-family" aria-labelledby="ports">
+        <div class="game-head">
+          <h2 class="game-name text-mark" id="ports">Alpha++ Ports</h2>
+          <ul class="labels">
+            <li class="status">In development</li>
+          </ul>
+          <p class="game-line">Run a container terminal: ships, cranes, the yard, and every box&rsquo;s way out by truck or train.</p>
+        </div>
+        <div class="gallery">
+          <!-- PENDING: the in-game pictures show invented ship lines ("Kestrel", "Corvane", "Halden") on the hulls, awaiting the owner's name check. -->
+          <ul class="shots">
+            <li><figure><a class="zoom" href="/assets/img/ports-quay-2560.jpg"><img src="/assets/img/ports-quay-480.jpg" srcset="/assets/img/ports-quay-480.jpg 480w, /assets/img/ports-quay-800.jpg 800w, /assets/img/ports-quay-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="Alpha++ Ports in game: two cranes working the container ship Halden at the quay in evening sun, the stacked yard and its yard cranes behind" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/ports-yard-2560.jpg"><img src="/assets/img/ports-yard-480.jpg" srcset="/assets/img/ports-yard-480.jpg 480w, /assets/img/ports-yard-800.jpg 800w, /assets/img/ports-yard-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="Alpha++ Ports in game: the container yard in evening sun, rows of stacked boxes, yellow yard cranes and the road to the warehouses" loading="lazy" decoding="async"></a></figure></li>
+            <li><figure><a class="zoom" href="/assets/img/ports-dusk-2560.jpg"><img src="/assets/img/ports-dusk-480.jpg" srcset="/assets/img/ports-dusk-480.jpg 480w, /assets/img/ports-dusk-800.jpg 800w, /assets/img/ports-dusk-1600.jpg 1600w" sizes="(max-width: 760px) 50vw, 16rem" width="800" height="450" alt="Alpha++ Ports in game: the whole terminal at dusk, two ships at the quay under their cranes, the yard and warehouses beyond" loading="lazy" decoding="async"></a></figure></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="game alphapp-family" aria-labelledby="railyards">
+        <div class="game-head">
+          <h2 class="game-name text-mark" id="railyards">Alpha++ Rail Yards</h2>
+          <ul class="labels">
+            <li class="status">In development</li>
+          </ul>
+          <p class="game-line">Run a freight yard from the tower: sort the cars over the hump and get every train out on time.</p>
+        </div>
+        <div class="gallery">
+          <figure class="pair">
+            <div class="pic"><a class="zoom" href="/assets/img/railyards-wide-2560.jpg"><img src="/assets/img/railyards-wide-480.jpg" srcset="/assets/img/railyards-wide-480.jpg 480w, /assets/img/railyards-wide-800.jpg 800w, /assets/img/railyards-wide-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="800" height="450" alt="Alpha++ Rail Yards in game: a sorting yard at midday, rows of wagons on parallel tracks, a control tower, a long shed and farmland around it" loading="lazy" decoding="async"></a></div>
+            <div class="pic"><a class="zoom" href="/assets/img/railyards-dusk-2560.jpg"><img src="/assets/img/railyards-dusk-480.jpg" srcset="/assets/img/railyards-dusk-480.jpg 480w, /assets/img/railyards-dusk-800.jpg 800w, /assets/img/railyards-dusk-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 24rem" width="800" height="450" alt="Alpha++ Rail Yards in game: the same yard at 19:00, low sun across the wagons and the shed, long shadows over the fields" loading="lazy" decoding="async"></a></div>
+            <figcaption>The same yard at midday, and at seven in the evening.</figcaption>
+          </figure>
+        </div>
       </article>
     </div>
   </section>

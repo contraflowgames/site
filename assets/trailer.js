@@ -1,4 +1,4 @@
-// The NeCity trailer: a poster and a play button until it is pressed, so
+// A trailer: a poster and a play button until it is pressed, so
 // nothing from Google loads with the page. Pressing it swaps in the
 // youtube-nocookie player. The video ID is read from the figure's "Watch on
 // YouTube" link, its one place on the page, which also serves visitors

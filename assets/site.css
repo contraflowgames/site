@@ -162,6 +162,13 @@ main { display: block; }
 .game + .game { margin-top: var(--space-5); padding-top: var(--space-5); border-top: 2px dashed var(--border); }
 .game-head > :last-child { margin-bottom: 0; }
 .game-line { margin: 0 0 var(--space-2); color: var(--text-muted); max-width: var(--measure); }
+/* Alpha++'s family: text only, a line each, quieter than the game it belongs to. */
+.family { margin-top: var(--space-3); padding-top: var(--space-2); border-top: 2px dashed var(--border); }
+.family h3 { font: 700 var(--step-1)/1.15 var(--font-display); margin: 0 0 var(--space-1); }
+.family dl { margin: 0; display: grid; gap: var(--space-2); }
+.family dt { font: 700 var(--step-0)/1.2 var(--font-display); letter-spacing: 0.01em; }
+.family dd { margin: 0.2rem 0 0; color: var(--text-muted); max-width: var(--measure); }
+.family-line { margin: 0; color: var(--text-muted); font-size: var(--step--1); max-width: var(--measure); }
 
 @media (min-width: 761px) {
   .game { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
@@ -232,28 +239,6 @@ main { display: block; }
 .gallery-note { font-size: var(--step--1); color: var(--text-muted); margin: 0; }
 .pic, .shots figure, .card figure { position: relative; }
 
-/* A game with no pictures yet: a 16:9 box dashed like the store placeholders,
-   so it reads as roadworks rather than a missing image. */
-.pic-soon {
-  display: flex; align-items: center; justify-content: center;
-  aspect-ratio: 16 / 9; box-sizing: border-box;
-  border: 2px dashed var(--text-muted); background: var(--surface);
-  font: 700 var(--step-0)/1 var(--font-display); letter-spacing: 0.02em;
-  color: var(--text-muted);
-}
-.pair .pic-soon { grid-column: 1 / -1; }
-
-/* The honest label, on the picture itself: "In game" for gameplay captures,
-   "Render" for staged or offline frames. */
-.stamp {
-  position: absolute; left: 0.5rem; top: 0.5rem; z-index: 1;
-  background: var(--bg); color: var(--text);
-  border: 1px solid var(--text-muted);
-  font: 600 var(--step--1)/1 var(--font-display); letter-spacing: 0.03em;
-  padding: 0.3rem 0.45rem;
-  pointer-events: none;
-}
-
 /* The trailer: a poster and a play button until pressed (assets/trailer.js),
    then the YouTube player in the same 16:9 box. */
 .trailer-frame { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--border); }
@@ -296,6 +281,7 @@ main { display: block; }
 /* ---- Home: "Also on the way" -------------------------------------------- */
 
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4) var(--space-3); }
+.cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .card { display: flex; flex-direction: column; }
 .card figure { margin-bottom: var(--space-2); }
 /* A card's logo or name is its link to the game's section on the games page:
@@ -324,7 +310,7 @@ main { display: block; }
   .lead-game .shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-1); }
   .lead-game .shots li { flex: 0 0 80%; scroll-snap-align: start; }
   .lead-game { padding-block: var(--space-2) var(--space-4); }
-  .cards { grid-template-columns: 1fr; }
+  .cards, .cards.two { grid-template-columns: 1fr; }
   .card + .card { border-top: 2px dashed var(--border); padding-top: var(--space-4); }
 }
 
