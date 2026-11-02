@@ -72,8 +72,11 @@
                  pressed: /assets/trailer.js then swaps in a youtube-nocookie embed. The video ID
                  lives only in the "Watch on YouTube" link below (the script reads it from there),
                  which is also the way to the trailer without JavaScript. Never autoplay on load. -->
-            <div class="trailer-frame">
-              <img src="/assets/img/lofi-trailer-poster-1600.jpg" width="1600" height="900" alt="">
+            <!-- The poster is the trailer's first frame on Apple's MacBook Air bezel (Apple Design Resources,
+                 Silver, unaltered: no shadow, tilt or crop, per Apple's marketing guidelines). The play button sits
+                 on the screen's picture, not on the laptop. Pressing it replaces the laptop with the 16:9 player. -->
+            <div class="trailer-frame device">
+              <img src="/assets/img/lofi-macbook-air-1600.webp" srcset="/assets/img/lofi-macbook-air-800.webp 800w, /assets/img/lofi-macbook-air-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 44rem" width="1600" height="1054" alt="NeCity Lo-Fi on a MacBook Air">
               <button type="button" class="trailer-play" aria-label="Play the NeCity Lo-Fi trailer" hidden></button>
             </div>
             <figcaption>Trailer, 0:55, captured in the game. Pressing play loads it from YouTube (<a href="/privacy/">privacy</a>). <a class="trailer-link" href="https://youtu.be/xC1ucnFZtsM">Watch on YouTube</a></figcaption>
@@ -144,6 +147,7 @@
       <li><a href="/contact/">Contact</a></li>
       <li><a href="/privacy/">Privacy</a></li>
     </ul>
+    <p class="credit-line">Apple, Mac, MacBook Air, iPad and Mac App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
   </div>
 </footer>
 <script src="/assets/trailer.js" defer></script>

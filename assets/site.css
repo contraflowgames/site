@@ -258,6 +258,12 @@ main { display: block; }
 .trailer-play:hover, .trailer-play:focus-visible { border-color: var(--accent); }
 .trailer-play:hover::before, .trailer-play:focus-visible::before { background: var(--accent); }
 .trailer-link { color: var(--text); white-space: nowrap; }
+/* On a device: the poster is Apple's bezel with the frame on its screen, shown whole on the section's own
+   background. Its screen is centred in the image, so the centred play button lands on the picture. Once
+   playing, the box goes back to the plain 16:9 player. */
+.trailer-frame.device { aspect-ratio: 1600 / 1054; background: none; border: 0; }
+.trailer-frame.device img { object-fit: contain; }
+.trailer-frame.device:has(iframe) { aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--border); }
 
 /* Alpha++: the exit-tab sign stands in front of its city, like a real sign. */
 .pic { overflow: hidden; }
@@ -338,6 +344,7 @@ main { display: block; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); justify-content: space-between; align-items: center; }
 .site-footer ul { display: flex; flex-wrap: wrap; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
 .site-footer a { color: var(--text-muted); }
+.site-footer .credit-line { flex-basis: 100%; margin: 0; font-size: var(--step--2, 0.75rem); }
 
 /* ---- 404 ----------------------------------------------------------------- */
 
