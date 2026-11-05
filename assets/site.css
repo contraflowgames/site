@@ -189,6 +189,8 @@ main { display: block; }
 .game-name img.game-wordmark { height: 100%; width: auto; max-width: 100%; object-fit: contain; object-position: left center; }
 /* Alpha++'s lockup is a solid sign, heavier than the neon wordmarks at the same height. */
 .game-name img.game-wordmark.sign { height: 78%; }
+/* The family's lockups are half Alpha++'s width, so they get a taller box to read (the owner's pick, 2026-11-05). */
+.alphapp-family .game-name { height: calc(var(--name-h) * 1.3); }
 /* A game without a wordmark yet: its name in the display face, mixed case, sized to sit with the logos. */
 .game .game-name.text-mark, .card .game-name.text-mark {
   height: auto; min-height: var(--name-h);
